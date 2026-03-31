@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>If the City Could Remember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="intro-overlay" id="introOverlay">
+
+    <div class="intro-content">
+      <h1>If the City Could Remember</h1>
+      <p>
+  Some things are never saved intentionally. <br>
+  They linger in corners, in quiet places,
+  in moments the city refused to let disappear.
+</p>
+      <button class="enter-btn" id="enterArchiveBtn">Step inside the Archive</button>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="story-section">
+      <div class="search-box">
+        <input
+          type="text"
+          id="memorySearch"
+          placeholder="Search the archive..."
+        >
+        <button onclick="searchMemory()">Search</button>
+      </div>
+
+      <div class="search-result" id="searchResult">
+        Enter a word to find a memory the city kept.
+      </div>
+
+      <p class="story-line">
+        Some cities do not forget. They keep pieces of people in train stations,
+        in wet sidewalks, in old windows, in places no one looks at twice.
+      </p>
+
+      <p class="story-line">
+        This city remembers every almost, every silence, every person who
+        thought they had disappeared from its streets.
+      </p>
+
+      <p class="story-line">
+        You walk through it like everyone else does, quickly, quietly, trying
+        not to look too long at the corners that still feel familiar.
+      </p>
+
+      <p class="story-line">
+        But sometimes the city slips. Sometimes it leaves something behind.
+        A voice in a stairwell. A reflection in a shop window.
+      </p>
+
+      <p class="story-line">
+        Tonight, the air feels heavy with rain, and the buildings seem to be
+        holding their breath.
+      </p>
+
+      <p class="story-line">
+        Around you, fragments begin to surface. Small folders drift across the
+        page like saved evidence, like pieces of a life the city kept for you.
+      </p>
+
+      <p class="story-line">
+        Click them. See what the city chose not to erase.
+      </p>
+    </div>
+
+    <div class="floating-area">
+
+      <button class="folder folder1" onclick="showMemory(0, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Train Station</span>
+      </button>
+
+      <button class="folder folder2" onclick="showMemory(1, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>July Rain</span>
+      </button>
+
+      <button class="folder folder3" onclick="showMemory(2, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Rooftop</span>
+      </button>
+
+      <button class="folder folder4" onclick="showMemory(3, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Window Light</span>
+      </button>
+
+      <button class="folder folder5" onclick="showMemory(4, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Corner Store</span>
+      </button>
+
+      <button class="folder folder6" onclick="showMemory(5, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Voicemail</span>
+      </button>
+
+      <button class="folder folder7" onclick="showMemory(6, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Blue Scarf</span>
+      </button>
+
+      <button class="folder folder8" onclick="showMemory(7, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Subway Map</span>
+      </button>
+
+      <button class="folder folder9" onclick="showMemory(8, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Last Summer</span>
+      </button>
+
+      <button class="folder folder10" onclick="showMemory(9, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Unknown Number</span>
+      </button>
+
+      <button class="folder folder11" onclick="showMemory(10, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Coffee Shop</span>
+      </button>
+
+      <button class="folder folder12" onclick="showMemory(11, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Park Bench</span>
+      </button>
+
+      <button class="folder folder13" onclick="showMemory(12, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Late Train</span>
+      </button>
+
+      <button class="folder folder14" onclick="showMemory(13, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Bookstore</span>
+      </button>
+
+      <button class="folder folder15" onclick="showMemory(14, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Midnight Walk</span>
+      </button>
+
+      <button class="folder folder16" onclick="showMemory(15, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Old Message</span>
+      </button>
+
+      <button class="folder folder17" onclick="showMemory(16, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>City Bridge</span>
+      </button>
+
+      <button class="folder folder18" onclick="showMemory(17, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Yellow Taxi</span>
+      </button>
+
+      <button class="folder folder19" onclick="showMemory(18, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Empty Apartment</span>
+      </button>
+
+      <button class="folder folder20" onclick="showMemory(19, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Winter Morning</span>
+      </button>
+
+      <button class="folder folder21" onclick="showMemory(20, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Lost Glove</span>
+      </button>
+
+      <button class="folder folder22" onclick="showMemory(21, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Street Music</span>
+      </button>
+
+      <button class="folder folder23" onclick="showMemory(22, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Neon Sign</span>
+      </button>
+
+      <button class="folder folder24" onclick="showMemory(23, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Forgotten Photo</span>
+      </button>
+
+      <button class="folder folder25" onclick="showMemory(24, this)">
+        <img src="folder.png" alt="folder icon">
+        <span>Return</span>
+      </button>
+
+    </div>
+  </div>
+
+  <script>
+    const memories = [
+    "The station still remembers the night you almost left. You were holding your ticket but didn’t step onto the train.",
+  
+  "That July rain started suddenly. You both ran under the same shop awning and laughed, before anything changed.",
+  
+  "On some rooftops, people make promises they don’t always keep. The city hears them anyway.",
+  
+  "There’s an apartment window that lights up every night. You still find yourself looking at it, even though you don’t know who lives there now.",
+  
+  "You used to stop at that corner store for no reason, just hoping they might walk in too.",
+  
+  "Someone kept a voicemail longer than they should have, replaying it just to hear a familiar voice.",
+  
+  "One day, the wind caught their blue scarf and left it on a fence. You stood there holding it, not knowing what to do with it.",
+  
+  "The subway map has a crease in the middle, right where you both kept folding it the same way.",
+  
+  "Last summer felt lighter. For a while, things seemed like they might work out.",
+  
+  "An unknown number called past midnight once. You watched it ring and let it stop on its own.",
+  
+  "A barista still spells a name the same wrong way every day, not knowing it mattered to someone once.",
+  
+  "There’s a park bench where people sit longer than they plan to. The wood is worn down in one spot.",
+  
+  "You missed the last train once because neither of you wanted the night to end.",
+  
+  "In an old bookstore, a folded page was left behind in a novel. The handwriting looked familiar to you.",
+  
+  "Late at night, quieter streets make it easier to think about things you never said.",
+  
+  "There’s still one message you never opened. You already knew what it would say.",
+  
+  "On the bridge, the wind carries voices away. Some words don’t stay long enough to be heard.",
+  
+  "Once, two people got into the wrong taxi and didn’t realize until much later.",
+  
+  "When someone moves out, an apartment can feel too clean, like nothing ever happened there.",
+  
+"One winter morning, the city was covered in fresh snow. Your footprints were the only ones on the sidewalk.",
+
+  "A glove stayed in your coat pocket for months before you noticed it. You don’t remember where it came from.",
+  
+  "A street musician plays the same song every evening. Some people slow down to listen, others keep walking.",
+  
+  "The diner’s neon sign still flickers the same way it did the night you said goodbye.",
+  
+  "There’s a photo on your phone of both of you laughing. You don’t remember who took it.",
+  
+  "Some nights, the city feels like it’s waiting. As if it remembers things people are trying to forget."
+    ];
+
+    function showMemory(index, clickedFolder) {
+
+  document.querySelectorAll(".folder").forEach(folder => {
+    folder.classList.remove("highlight");
+  });
+
+  const oldPopup = document.querySelector(".memory-popup");
+  if (oldPopup) oldPopup.remove();
+
+  const popup = document.createElement("div");
+  popup.className = "memory-popup";
+  popup.textContent = memories[index];
+
+  const floatingArea = document.querySelector(".floating-area");
+  floatingArea.appendChild(popup);
+
+  popup.style.left = (clickedFolder.offsetLeft + 95) + "px";
+  popup.style.top = (clickedFolder.offsetTop + 8) + "px";
+}
+
+
+document.addEventListener("click", function (e) {
+  const popup = document.querySelector(".memory-popup");
+  if (!popup) return;
+
+  if (!e.target.closest(".folder") && !e.target.closest(".memory-popup")) {
+    popup.remove();
+  }
+});
+
+
+function searchMemory() {
+  const searchInput = document
+    .getElementById("memorySearch")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const folders = document.querySelectorAll(".folder");
+  const resultBox = document.getElementById("searchResult");
+
+  folders.forEach(folder => {
+    folder.classList.remove("highlight");
+    folder.classList.remove("jump");
+  });
+
+  if (searchInput === "") {
+    resultBox.textContent = "Enter a word to find a memory the city kept.";
+    return;
+  }
+
+  let found = false;
+
+  folders.forEach((folder) => {
+    const folderTitle = folder.querySelector("span").textContent.toLowerCase();
+
+    if (folderTitle.includes(searchInput)) {
+      folder.classList.add("jump");
+
+      setTimeout(() => {
+        folder.classList.remove("jump");
+      }, 450);
+
+      found = true;
+    }
+  });
+
+  if (found) {
+    resultBox.textContent = "The archive stirred. Look closely.";
+  } else {
+    resultBox.textContent = "The city searched… but that memory was never kept.";
+  }
+}
+
+
+document.getElementById("memorySearch").addEventListener("input", function () {
+  const resultBox = document.getElementById("searchResult");
+
+  if (this.value.trim() === "") {
+    resultBox.textContent = "Enter a word to find a memory the city kept.";
+
+    document.querySelectorAll(".folder").forEach(folder => {
+      folder.classList.remove("highlight");
+      folder.classList.remove("jump");
+    });
+  }
+});
+
+
+// INTRO SCREEN
+const introOverlay = document.getElementById("introOverlay");
+const enterArchiveBtn = document.getElementById("enterArchiveBtn");
+
+enterArchiveBtn.addEventListener("click", function () {
+  introOverlay.classList.add("hide");
+});
+  </script>
+   </body>
+</html>
