@@ -202,7 +202,6 @@ font-family: "Noto Serif Display", serif;
 
     .story-line:hover {
       color: rgb(255, 255, 255);
-      transform: translateX(4px);
     }
 
 
