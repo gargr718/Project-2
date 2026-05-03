@@ -333,3 +333,102 @@ font-family: "Noto Serif Display", serif;
     transform: translateY(0);
   }
 }
+
+@media (max-width: 740px) {
+  body {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  .intro-content {
+    padding: 24px;
+  }
+
+  .intro-content h1 {
+    font-size: 52px;
+    line-height: 58px;
+  }
+
+  .intro-content p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .page {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .story-section {
+    width: 100%;
+    margin: 0;
+    padding: 24px 22px;
+    border-radius: 24px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  .story-line {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .floating-area {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 12px;
+    padding-bottom: 40px;
+  }
+
+  .folder {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .folder img {
+    width: 54px;
+  }
+
+  .folder span {
+    font-size: 11px;
+    line-height: 16px;
+    max-width: 100%;
+  }
+
+  .memory-popup {
+  position: absolute;
+  width: 220px;
+  max-width: 80vw;
+  bottom: auto;
+  transform: none;
+  z-index: 999;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes mobilePopupFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+}

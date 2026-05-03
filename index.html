@@ -285,8 +285,23 @@ They shape the people who pass through them.
   const floatingArea = document.querySelector(".floating-area");
   floatingArea.appendChild(popup);
 
-  popup.style.left = (clickedFolder.offsetLeft + 95) + "px";
-  popup.style.top = (clickedFolder.offsetTop + 8) + "px";
+  if (window.innerWidth <= 740) {
+  const folderRect = clickedFolder.getBoundingClientRect();
+  const containerRect = document
+    .querySelector(".floating-area")
+    .getBoundingClientRect();
+
+  const popupWidth = 220; // match your CSS width
+
+  popup.style.left =
+    folderRect.left - containerRect.left + (folderRect.width / 2) - (popupWidth / 2) + "px";
+
+  popup.style.top =
+    clickedFolder.offsetTop + clickedFolder.offsetHeight + 10 + "px";
+
+  popup.style.transform = "none";
+  popup.style.bottom = "auto";
+}
 }
 
 
@@ -326,14 +341,22 @@ function searchMemory() {
     const folderTitle = folder.querySelector("span").textContent.toLowerCase();
 
     if (folderTitle.includes(searchInput)) {
-      folder.classList.add("jump");
 
-      setTimeout(() => {
-        folder.classList.remove("jump");
-      }, 450);
+  if (window.innerWidth <= 740) {
+    folder.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
 
-      found = true;
-    }
+  folder.classList.add("jump");
+
+  setTimeout(() => {
+    folder.classList.remove("jump");
+  }, 450);
+
+  found = true;
+}
   });
 
   if (found) {
