@@ -270,7 +270,6 @@ They shape the people who pass through them.
     ];
 
     function showMemory(index, clickedFolder) {
-
   document.querySelectorAll(".folder").forEach(folder => {
     folder.classList.remove("highlight");
   });
@@ -286,24 +285,24 @@ They shape the people who pass through them.
   floatingArea.appendChild(popup);
 
   if (window.innerWidth <= 740) {
-  const folderRect = clickedFolder.getBoundingClientRect();
-  const containerRect = document
-    .querySelector(".floating-area")
-    .getBoundingClientRect();
+    const popupWidth = popup.offsetWidth;
 
-  const popupWidth = 220; // match your CSS width
+    popup.style.left =
+      clickedFolder.offsetLeft + clickedFolder.offsetWidth / 2 - popupWidth / 2 + "px";
 
-  popup.style.left =
-    folderRect.left - containerRect.left + (folderRect.width / 2) - (popupWidth / 2) + "px";
+    popup.style.top =
+      clickedFolder.offsetTop + clickedFolder.offsetHeight + 10 + "px";
 
-  popup.style.top =
-    clickedFolder.offsetTop + clickedFolder.offsetHeight + 10 + "px";
-
-  popup.style.transform = "none";
-  popup.style.bottom = "auto";
+    popup.style.bottom = "auto";
+    popup.style.transform = "none";
+  } else {
+    popup.style.position = "absolute";
+    popup.style.left = (clickedFolder.offsetLeft + 95) + "px";
+    popup.style.top = (clickedFolder.offsetTop + 8) + "px";
+    popup.style.bottom = "auto";
+    popup.style.transform = "none";
+  }
 }
-}
-
 
 document.addEventListener("click", function (e) {
   const popup = document.querySelector(".memory-popup");
