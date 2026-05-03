@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -340,22 +340,36 @@ function searchMemory() {
     const folderTitle = folder.querySelector("span").textContent.toLowerCase();
 
     if (folderTitle.includes(searchInput)) {
+      found = true;
 
-  if (window.innerWidth <= 740) {
-    folder.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
+      if (window.innerWidth <= 740) {
+        const targetY =
+          window.scrollY +
+          folder.getBoundingClientRect().top -
+          window.innerHeight / 2 +
+          folder.offsetHeight / 2;
+          
+          window.scrollTo({
+  top: targetY,
+  behavior: "smooth"
+});
 
+setTimeout(() => {
   folder.classList.add("jump");
 
   setTimeout(() => {
     folder.classList.remove("jump");
-  }, 450);
+  }, 700);
+}, 500);
 
-  found = true;
-}
+      } else {
+        folder.classList.add("jump");
+
+        setTimeout(() => {
+          folder.classList.remove("jump");
+        }, 800);
+      }
+    }
   });
 
   if (found) {
@@ -364,7 +378,6 @@ function searchMemory() {
     resultBox.textContent = "The city searched… but that memory was never kept.";
   }
 }
-
 
 document.getElementById("memorySearch").addEventListener("input", function () {
   const resultBox = document.getElementById("searchResult");
@@ -379,7 +392,6 @@ document.getElementById("memorySearch").addEventListener("input", function () {
   }
 });
 
-
 // INTRO SCREEN
 const introOverlay = document.getElementById("introOverlay");
 const enterArchiveBtn = document.getElementById("enterArchiveBtn");
@@ -387,6 +399,6 @@ const enterArchiveBtn = document.getElementById("enterArchiveBtn");
 enterArchiveBtn.addEventListener("click", function () {
   introOverlay.classList.add("hide");
 });
-  </script>
-   </body>
+</script>
+</body>
 </html>
