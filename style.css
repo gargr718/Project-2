@@ -103,7 +103,7 @@ font-family: "Noto Serif Display", serif;
       cursor: pointer;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .enter-btn:hover {
